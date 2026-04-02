@@ -44,7 +44,7 @@ jobs:
           - "mac_gcc"
           - "mac_clang"
           - "mac_Xcode"
-          - "win11_clang"
+          - "win11_clang-cl"
           - "win11_cl"
           - "win10_cl"
         include:
@@ -78,11 +78,11 @@ jobs:
             cc : cc
             cxx: c++
             gen: "Xcode"
-          - name: "win11 clang"
-            bp : "win11_clang"
+          - name: "win11 clang-cl"
+            bp : "win11_clang-cl"
             pl : windows-latest
-            cc : clang
-            cxx: clang++
+            cc : clang-cl
+            cxx: clang-cl
             gen: "Ninja"
           - name: "win11 MSVC"
             bp : "win11_cl"

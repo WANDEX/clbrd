@@ -26,11 +26,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="tabShape">
-       <enum>QTabWidget::Rounded</enum>
+       <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -40,7 +40,7 @@
         <string>Ctrl+1</string>
        </property>
        <attribute name="title">
-        <string>Preview</string>
+        <string>Clients</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -70,16 +70,16 @@
               </sizepolicy>
              </property>
              <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Sunken</enum>
+              <enum>QFrame::Shadow::Sunken</enum>
              </property>
              <property name="verticalScrollBarPolicy">
-              <enum>Qt::ScrollBarAlwaysOff</enum>
+              <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
              </property>
              <property name="widgetResizable">
               <bool>true</bool>
@@ -125,7 +125,7 @@
                <item>
                 <spacer name="horizontalSpacer">
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
@@ -136,89 +136,9 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QDateEdit" name="dateFr">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>10</height>
-                  </size>
-                 </property>
-                 <property name="toolTip">
-                  <string>date from (Ctrl+d)</string>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="currentSection">
-                  <enum>QDateTimeEdit::DaySection</enum>
-                 </property>
-                 <property name="displayFormat">
-                  <string>dd/MM/yy</string>
-                 </property>
-                 <property name="calendarPopup">
-                  <bool>true</bool>
-                 </property>
-                 <property name="timeSpec">
-                  <enum>Qt::LocalTime</enum>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>10</width>
-                   <height>0</height>
-                  </size>
-                 </property>
+                <widget class="QPushButton" name="pushButton_start_stop">
                  <property name="text">
-                  <string>&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QDateEdit" name="dateTo">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>10</height>
-                  </size>
-                 </property>
-                 <property name="toolTip">
-                  <string>date to (Ctrl+D)</string>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="currentSection">
-                  <enum>QDateTimeEdit::DaySection</enum>
-                 </property>
-                 <property name="displayFormat">
-                  <string>dd/MM/yy</string>
-                 </property>
-                 <property name="calendarPopup">
-                  <bool>true</bool>
-                 </property>
-                 <property name="timeSpec">
-                  <enum>Qt::LocalTime</enum>
+                  <string>start/stop</string>
                  </property>
                 </widget>
                </item>
@@ -230,22 +150,22 @@
          </widget>
         </item>
         <item>
-         <widget class="QPlainTextEdit" name="previewText">
-          <property name="toolTip">
-           <string>Ctrl+t</string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="lineWrapMode">
-           <enum>QPlainTextEdit::NoWrap</enum>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="plainText">
-           <string notr="true"/>
-          </property>
+         <widget class="QTableWidget" name="tableWidget_clients">
+          <column>
+           <property name="text">
+            <string>ID client</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>IP address</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>status</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
@@ -255,258 +175,44 @@
         <string>Ctrl+2</string>
        </property>
        <attribute name="title">
-        <string>Spent</string>
+        <string>Data</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QWidget" name="topWidget_tab_2" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>85</height>
-           </size>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QScrollArea" name="scrollArea_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="verticalScrollBarPolicy">
-              <enum>Qt::ScrollBarAlwaysOff</enum>
-             </property>
-             <property name="widgetResizable">
-              <bool>true</bool>
-             </property>
-             <widget class="QWidget" name="scrollAreaWidgetContents_2">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>774</width>
-                <height>67</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_2">
-               <item row="0" column="6">
-                <widget class="QCheckBox" name="checkBoxMerge">
-                 <property name="toolTip">
-                  <string>Ctrl+m</string>
-                 </property>
-                 <property name="text">
-                  <string>merge</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPlainTextEdit" name="statsSum">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="acceptDrops">
-                  <bool>false</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="undoRedoEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="lineWrapMode">
-                  <enum>QPlainTextEdit::NoWrap</enum>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="plainText">
-                  <string>  sum: 00:00</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QPlainTextEdit" name="statsMin">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="acceptDrops">
-                  <bool>false</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="undoRedoEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="lineWrapMode">
-                  <enum>QPlainTextEdit::NoWrap</enum>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="plainText">
-                  <string>min: 00:00</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3" colspan="2">
-                <spacer name="horizontalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>400</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPlainTextEdit" name="statsMax">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="acceptDrops">
-                  <bool>false</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="undoRedoEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="lineWrapMode">
-                  <enum>QPlainTextEdit::NoWrap</enum>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="plainText">
-                  <string>max: 00:00</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QPlainTextEdit" name="statsAvg">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="acceptDrops">
-                  <bool>false</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="undoRedoEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="lineWrapMode">
-                  <enum>QPlainTextEdit::NoWrap</enum>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="plainText">
-                  <string>  avg: 00:00</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPlainTextEdit" name="statsRec">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="acceptDrops">
-                  <bool>false</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="undoRedoEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="lineWrapMode">
-                  <enum>QPlainTextEdit::NoWrap</enum>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="plainText">
-                  <string>records: 0</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </widget>
-           </item>
-          </layout>
+         <widget class="QTableWidget" name="tableWidget_data">
+          <column>
+           <property name="text">
+            <string>ID clients</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>data type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>data</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>timestamp</string>
+           </property>
+          </column>
          </widget>
         </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Log</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QPlainTextEdit" name="spentText">
-          <property name="toolTip">
-           <string>Ctrl+t</string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="lineWrapMode">
-           <enum>QPlainTextEdit::NoWrap</enum>
-          </property>
+         <widget class="QTextEdit" name="textEdit_log">
           <property name="readOnly">
            <bool>true</bool>
-          </property>
-          <property name="plainText">
-           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -522,10 +228,57 @@
      <x>0</x>
      <y>0</y>
      <width>832</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menulanguage">
+     <property name="title">
+      <string>language</string>
+     </property>
+     <addaction name="actionChinese_Simplified_2"/>
+     <addaction name="actionEnglish"/>
+     <addaction name="actionRussian"/>
+    </widget>
+    <addaction name="menulanguage"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuHelp"/>
   </widget>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionRussian">
+   <property name="text">
+    <string>Russian</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionChinese_Simplified">
+   <property name="text">
+    <string>Chinese Simplified</string>
+   </property>
+  </action>
+  <action name="actionChinese_Simplified_2">
+   <property name="text">
+    <string>Chinese (Simplified)</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

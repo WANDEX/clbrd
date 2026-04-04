@@ -1,9 +1,10 @@
 #pragma once
 
-#include <QObject>
+#include "wndx/clbrd/aliases.hpp"
 
 #include "ui.hpp"
-#include "wndx/clbrd/aliases.hpp"
+
+#include <QObject>
 
 namespace wndx::clbrd {
 

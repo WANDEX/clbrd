@@ -1,10 +1,11 @@
 #pragma once
 
-#include <QMainWindow>
-#include <QObject>
+#include "wndx/clbrd/aliases.hpp"
 
 #include "ui.hpp"
-#include "wndx/clbrd/aliases.hpp"
+
+#include <QMainWindow>
+#include <QObject>
 
 namespace wndx::clbrd {
 

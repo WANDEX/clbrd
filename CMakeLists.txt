@@ -64,6 +64,7 @@ macro(targets_and_linking)
   if(CLBRD_BUILD_SRC OR NOT CLBRD_IS_TOP_PROJECT)
     ## find/fetch dependecies:
     find_package(fmt REQUIRED)
+    find_package(cxxopts REQUIRED)
     find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
     find_package(QT NAMES Qt6) # => populate QT_VERSION variables!
     message(DEBUG "QT_VERSION:${QT_VERSION} OR ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")

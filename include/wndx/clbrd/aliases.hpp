@@ -22,4 +22,12 @@ using str_v = std::u8string_view;
 using vec_str_t = std::vector<str_t>;
 using vec_s32_t = std::vector<s32>;
 
-} // namespace wndx::clbrd
+using addr_t = sv_t;
+using port_t = u16;
+
+/// cxxopts default_value() accepts std::string.
+/// Any other type make working with the cxxopts unnecessarily harder.
+/// => Common type for the command line options.
+using cmd_opt_t = std::string;
+
+}  // namespace wndx::clbrd

@@ -8,9 +8,9 @@ BasedOnStyle: Google
 Language: Cpp
 Standard: c++20
 
-# IncludeBlocks: Preserve
-# SortIncludes: true
-#
+IncludeBlocks: Preserve
+SortIncludes: true
+
 # BreakConstructorInitializers: BeforeComma
 # BreakTemplateDeclarations: Yes
 # ColumnLimit: 80

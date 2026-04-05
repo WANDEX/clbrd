@@ -65,7 +65,7 @@ macro(targets_and_linking)
     ## find/fetch dependecies:
     find_package(fmt REQUIRED)
     find_package(cxxopts REQUIRED)
-    find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+    find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network)
     find_package(QT NAMES Qt6) # => populate QT_VERSION variables!
     message(DEBUG "QT_VERSION:${QT_VERSION} OR ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
     if(${QT_VERSION} VERSION_LESS 6.5.2)

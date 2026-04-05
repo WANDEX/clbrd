@@ -9,11 +9,6 @@
 ##  2. Increases build times as unneeded properties are added to all targets.
 ##  3. Which leads to excessive/unneeded code generation by the Qt framework.
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
-find_package(QT NAMES Qt6) # => populate QT_VERSION variables!
-
-target_link_libraries(clbrd_deps PUBLIC Qt6::Core Qt6::Widgets)
-
 set(CLBRD_UI_FILES mainwindow.ui)
 
 target_sources(clbrd_src

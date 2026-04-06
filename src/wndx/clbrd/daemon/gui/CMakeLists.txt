@@ -40,3 +40,13 @@ set_target_properties(clbrd_app PROPERTIES
   MACOSX_BUNDLE TRUE
   WIN32_EXECUTABLE TRUE
 )
+
+qt_add_translations(clbrd_app
+  SOURCES
+    mainwindow.cpp
+    ${CLBRD_UI_FILES} # adding them here triggers AUTOUIC
+  TS_FILES
+    i18n/clbrd_en_US.ts
+    i18n/clbrd_ru_RU.ts
+    i18n/clbrd_zh_CN.ts
+)

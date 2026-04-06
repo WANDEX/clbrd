@@ -6,6 +6,8 @@
 
 #include <QMainWindow>
 #include <QObject>
+#include <QString>
+#include <QTranslator>
 
 namespace wndx::clbrd {
 
@@ -19,11 +21,14 @@ class MainWindow : public QMainWindow {
 
   // signals:
 
-  // private slots:
-  //
-  //  void startup();
+ private slots:
+  bool SwitchToLanguage(const QString& language);
+  bool SetLanguageToDefaultLocale();
 
- private:
+  void Startup();
+
+ private:  // NOLINT(readability-redundant-access-specifiers)
+  QTranslator m_translator;
   ui::MainWindow& m_ui_self;
   Ui::MainWindow& m_ui;
 };

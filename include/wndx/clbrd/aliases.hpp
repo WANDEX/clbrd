@@ -3,6 +3,8 @@
 
 #include "wndx/sane/aliases.hpp"
 
+#include <QString>
+
 #include <string_view>
 #include <vector>
 
@@ -31,3 +33,14 @@ using port_t = u16;
 using cmd_opt_t = std::string;
 
 }  // namespace wndx::clbrd
+
+/// \brief QString fmt format specialization.
+///
+/// this allows to send QStrings to the fmt::format.
+template <>
+struct fmt::formatter<QString> : formatter<string_view> {
+  auto format(QString const& s, format_context& ctx) const
+      -> format_context::iterator {
+    return formatter<string_view>::format(s.toStdString(), ctx);
+  }
+};

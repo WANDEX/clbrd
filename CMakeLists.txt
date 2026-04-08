@@ -11,7 +11,7 @@ cmake_policy(SET CMP0156 NEW)
 ## ^ POLICIES
 project(
   clbrd
-  VERSION       0.0.0.1
+  VERSION       0.0.0.2
   LANGUAGES     CXX
   DESCRIPTION   "CLBRD - QTcpServer/QTcpSocket Client/Server"
   HOMEPAGE_URL  "https://github.com/WANDEX/clbrd"
